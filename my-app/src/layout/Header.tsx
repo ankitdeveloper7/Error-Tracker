@@ -17,7 +17,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="text-white-600">
+    <div className="">
       {/* <div className="absolute right-0 top-0 w-1/3 h-full pointer-events-none bg-gradient-to-l from-white/12 to-transparent blur-4xl" /> */}
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
@@ -49,14 +49,17 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm/6  text-gray-900 text-white"
+                className="text-sm/6 font-semibold text-gray-900 text-white hover:text-[#00ffb2]"
               >
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm/6  text-white hover:text-[#00ffb2]">
+            <a
+              href="#"
+              className="text-sm/6  text-white hover:text-[#00ffb2] font-semibold"
+            >
               Start Free <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -94,7 +97,7 @@ export default function Header() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7  hover:bg-gray-50 text-white"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7  hover:bg-gray-50 text-white hover:text-black"
                     >
                       {item.name}
                     </a>
@@ -103,7 +106,7 @@ export default function Header() {
                 <div className="py-6">
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white bg-[#00ffb2]"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-black bg-[#00ffb2]"
                   >
                     Start Free
                   </a>
@@ -124,7 +127,7 @@ export default function Header() {
             <h1 className="text-5xl  tracking-tight text-balance  sm:text-7xl text-[#F5F5F5]">
               Catch Bugs Before Your Users Do.
             </h1>
-            <p className="mt-8 text-sm  text-pretty text-[#D5D5D5] sm:text-base">
+            <p className="mt-8 text-sm  text-pretty text-[#D5D5D5] font-normal sm:text-base md:text-lg">
               Get real-time error tracking, detailed stack traces, and instant
               alerts — all in one blazing-fast dashboard.
             </p>

@@ -1,12 +1,14 @@
 import HorizontalLine from "@/components/HorizontalLine";
 import CTA from "@/components/ui/CTA";
+import FAQS from "@/components/ui/FAQS";
 import Features from "@/components/ui/Features";
+import HowitWork from "@/components/ui/Howitwork";
 import Footer from "@/layout/Footer";
 import Header from "@/layout/Header";
 
 export default function Home() {
   return (
-    <div className="max-w-5xl mx-auto px-2 relative">
+    <div className="max-w-6xl mx-auto px-2 relative">
       <Header />
       {/* <div className=" flex justify-center font-semibold text-3xl w-20  py-4">
         <div className="min-w-lg">
@@ -14,11 +16,11 @@ export default function Home() {
         </div>
       </div> */}
       <div>
-        <center className="">
-          <div className="font-semibold text-2xl ">
+        <center className="mb-4 px-2">
+          <div className="font-normal text-4xl ">
             Powerful Features Built for Developers
           </div>
-          <p className="py-2 text-sm">
+          <p className="py-2 text-base">
             Track, debug, and resolve errors — all in one sleek,
             developer-friendly dashboard.
           </p>
@@ -26,11 +28,13 @@ export default function Home() {
         <HorizontalLine />
         <div className="border-[#202026] border-x-2 mx-5 ">
           <Features />
-          <HorizontalLine />
           <div className="mt-[80px]">
             <HorizontalLine />
           </div>
+          <HowitWork />
           <CTA />
+
+          <FAQS />
           <Footer />
         </div>
       </div>
