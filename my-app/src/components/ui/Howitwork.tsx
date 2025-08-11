@@ -26,7 +26,7 @@ export default function HowitWork() {
       <HorizontalLine />
       <div className="">
         <div className="grid grid-cols-1 md:grid-cols-3 text-base">
-          <div className="border-b-2  md:border-b-0 sm:border-r-2 border-[#202026] text-left grid gap-1">
+          <div className="border-b-2  md:border-b-0 sm:border-r-2 border-[#202026] text-left">
             <div className="bg-gradient-to-b pointer-events-none from-white/12 w-full  p-4 to-transparent blur-4xl">
               <center className="">
                 <Image
@@ -37,14 +37,17 @@ export default function HowitWork() {
                   className=""
                 />
               </center>
-              <p className="font-semibold">Install</p>
-              <p>
-                Add our SDK in seconds — one npm install or a single script tag.
-              </p>
+              <div className="pt-4">
+                <p className="font-semibold">Install</p>
+                <p>
+                  Add our SDK in seconds — one npm install or a single script
+                  tag.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className=" border-b-2 md:border-b-0 md:border-r-2 border-[#202026] grid gap-1">
+          <div className=" border-b-2 md:border-b-0 md:border-r-2 border-[#202026]">
             <div className="bg-gradient-to-b pointer-events-none from-white/12 w-full  p-4 to-transparent blur-4xl">
               <center className="">
                 <Image
@@ -55,10 +58,13 @@ export default function HowitWork() {
                   className=""
                 />
               </center>
-              <p className="font-semibold">Connect</p>
-              <p>
-                Create a project in your dashboard and paste your unique token.
-              </p>
+              <div className="pt-4">
+                <p className="font-semibold">Connect</p>
+                <p>
+                  Create a project in your dashboard and paste your unique
+                  token.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -67,17 +73,19 @@ export default function HowitWork() {
               <center className="">
                 <Image
                   src={bugs}
-                  width={200}
-                  height={200}
+                  width={170}
+                  height={170}
                   alt="connect with project"
                   className=""
                 />
               </center>
-              <p className="font-semibold">Monitor & Fix</p>
-              <p>
-                See real-time error reports, track status, and mark issues as
-                fixed.
-              </p>
+              <div className="pt-4">
+                <p className="font-semibold">Monitor & Fix</p>
+                <p>
+                  See real-time error reports, track status, and mark issues as
+                  fixed.
+                </p>
+              </div>
             </div>
           </div>
         </div>
