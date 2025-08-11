@@ -20,7 +20,7 @@ export default function Home() {
           <div className="font-normal text-4xl ">
             Powerful Features Built for Developers
           </div>
-          <p className="py-2 text-base">
+          <p className="py-2 text-base text-[#d5d5d5]">
             Track, debug, and resolve errors — all in one sleek,
             developer-friendly dashboard.
           </p>
@@ -32,7 +32,13 @@ export default function Home() {
             <HorizontalLine />
           </div>
           <HowitWork />
+          <div className="mt-[80px]">
+            <HorizontalLine />
+          </div>
           <CTA />
+          <div className="my-[80px]">
+            <HorizontalLine />
+          </div>
 
           <FAQS />
           <Footer />

@@ -21,94 +21,108 @@ export default function FAQS() {
 
       <HorizontalLine />
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div>
-          <details>
-            <summary>What types of errors does BugTrace detect?</summary>
-            <div>
+        <div className="md:border-r-2 border-[#202026]">
+          <details className="p-4 border-b-2 border-[#202026]">
+            <summary className="cursor-pointer">
+              What types of errors does BugTrace detect?
+            </summary>
+            <div className="text-[#d5d5d5]">
               BugTrace captures frontend JavaScript errors, API failures, server
               crashes, and post-production bugs like API limit exceed or service
               downtime.
             </div>
           </details>
 
-          <details>
-            <summary>Does BugTrace work with my tech stack?</summary>
-            <div>
+          <details className="p-4 border-b-2 border-[#202026]">
+            <summary className="cursor-pointer">
+              Does BugTrace work with my tech stack?
+            </summary>
+            <div className="text-[#d5d5d5]">
               Yes — BugTrace works with Next.js, React, Node.js, and most modern
               web frameworks. You can also integrate it with custom backend
               services via our API.
             </div>
           </details>
 
-          <details>
-            <summary>How quickly will I see error reports?</summary>
-            <div>
+          <details className="p-4 border-b-2 border-[#202026]">
+            <summary className="cursor-pointer">
+              How quickly will I see error reports?
+            </summary>
+            <div className="text-[#d5d5d5]">
               All errors are processed and displayed in your dashboard in
               real-time — usually within a few milliseconds of occurring.
             </div>
           </details>
 
-          <details>
-            <summary>Will BugTrace impact my app’s performance?</summary>
-            <div>
+          <details className="p-4 border-b-2 border-[#202026]">
+            <summary className="cursor-pointer">
+              Will BugTrace impact my app’s performance?
+            </summary>
+            <div className="text-[#d5d5d5]">
               No. Our lightweight SDK is optimized to run asynchronously, so it
               won’t block rendering or slow down your site.
             </div>
           </details>
 
-          <details>
-            <summary>Can I track errors from production only?</summary>
-            <div>
+          <details className="p-4 sm:border-b-2 md:border-b-0 border-[#202026]">
+            <summary className="cursor-pointer">
+              Can I track errors from production only?
+            </summary>
+            <div className="text-[#d5d5d5]">
               Yes — you can configure environments (development, staging,
               production) and choose which ones to monitor.
             </div>
           </details>
         </div>
         <div>
-          <details>
-            <summary>
+          <details className="p-4 border-b-2 border-[#202026]">
+            <summary className="cursor-pointer">
               How is BugTrace different from Sentry or LogRocket?
             </summary>
-            <div>
+            <div className="text-[#d5d5d5]">
               BugTrace is lightweight, fast to set up, and focuses on delivering
               exactly what you need without extra complexity or bloat.
             </div>
           </details>
 
-          <details>
-            <summary>Is there a free plan?</summary>
-            <div>
+          <details className="p-4 border-b-2 border-[#202026]">
+            <summary className="cursor-pointer">Is there a free plan?</summary>
+            <div className="text-[#d5d5d5]">
               Yes — our free plan includes X tracked errors per month for 1
               project. Upgrade for more projects and higher limits.
             </div>
           </details>
 
-          <details>
-            <summary>Does BugTrace store sensitive user data?</summary>
-            <div>
+          <details className="p-4 border-b-2 border-[#202026]">
+            <summary className="cursor-pointer">
+              Does BugTrace store sensitive user data?
+            </summary>
+            <div className="text-[#d5d5d5]">
               No — we do not store personal identifiable information (PII)
               unless you explicitly include it in your error logs.
             </div>
           </details>
 
-          <details>
-            <summary>Can I use BugTrace with a team?</summary>
-            <div>
+          <details className="p-4 border-b-2 border-[#202026]">
+            <summary className="cursor-pointer">
+              Can I use BugTrace with a team?
+            </summary>
+            <div className="text-[#d5d5d5]">
               Absolutely — you can invite multiple team members to a project and
               collaborate on fixing bugs.
             </div>
           </details>
 
-          <details>
-            <summary>How do I get started?</summary>
-            <div>
+          <details className="p-4">
+            <summary className="cursor-pointer">How do I get started?</summary>
+            <div className="text-[#d5d5d5]">
               Sign up, create a project, copy the script tag or SDK init code,
               and start tracking bugs in minutes.
             </div>
           </details>
         </div>
       </div>
-      <HorizontalLine />
+      {/* <HorizontalLine /> */}
     </>
   );
 }

@@ -5,10 +5,10 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Features", href: "#" },
+  { name: "Features", href: "#features" },
   { name: "Docs", href: "#" },
-  { name: "Pricing", href: "#" },
-  { name: "GitHub", href: "#" },
+  { name: "HowItWork", href: "#howitwork" },
+  { name: "GitHub", href: "https://github.com/ankitdeveloper7/Error-Tracker" },
 ];
 
 // #abffe6
@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <div className="">
-      {/* <div className="absolute right-0 top-0 w-1/3 h-full pointer-events-none bg-gradient-to-l from-white/12 to-transparent blur-4xl" /> */}
+      {/* <div className="absolute right-0 top-0 w-1/3  pointer-events-none bg-gradient-to-l from-white/12 bg-gradient-to-d from-white/12 to-transparent blur-4xl" /> */}
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           aria-label="Global"
@@ -50,6 +50,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className="text-sm/6 font-semibold text-gray-900 text-white hover:text-[#00ffb2]"
+                target="_blank"
               >
                 {item.name}
               </a>
@@ -97,6 +98,7 @@ export default function Header() {
                     <a
                       key={item.name}
                       href={item.href}
+                      target="_blank"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base/7  hover:bg-gray-50 text-white hover:text-black"
                     >
                       {item.name}
@@ -127,14 +129,14 @@ export default function Header() {
             <h1 className="text-5xl  tracking-tight text-balance  sm:text-7xl text-[#F5F5F5]">
               Catch Bugs Before Your Users Do.
             </h1>
-            <p className="mt-8 text-sm  text-pretty text-[#D5D5D5] font-normal sm:text-base md:text-lg">
+            <p className="mt-8 text-sm  text-pretty text-[#d5d5d5] font-normal sm:text-base md:text-lg">
               Get real-time error tracking, detailed stack traces, and instant
               alerts — all in one blazing-fast dashboard.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-[#00ffb2] px-3.5 py-2.5 text-sm  text-black shadow-xs  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-[#00ffb2] font-semibold px-3.5 py-2.5 text-sm  text-black shadow-xs  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Start Free
               </a>
