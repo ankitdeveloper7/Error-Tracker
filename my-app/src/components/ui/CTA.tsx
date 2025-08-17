@@ -1,7 +1,7 @@
 export default function CTA() {
   return (
     <>
-      <div className="bg-gradient-to-b pointer-events-none from-white/12 w-full to-transparent blur-4xl">
+      <div className="bg-gradient-to-b pointer-events-none from-white/12 w-full h-1/10 to-transparent blur-4xl">
         <div className="px-8 py-[80px] flex  justify-center item-center ">
           <div className="flex flex-col item-center text-center gap-5">
             <p className="font-normal text-4xl">
