@@ -34,7 +34,7 @@ export default function AddProjectModal({
               transition
               className="relative transform overflow-hidden rounded-lg bg-gray-800 text-left shadow-xl outline -outline-offset-1 outline-white/10 transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95"
             >
-              <div className="bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div className="bg-black text-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <p>this is add project form </p>
                 <button onClick={onClose}>close</button>
               </div>

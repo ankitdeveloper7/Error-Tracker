@@ -11,7 +11,7 @@ export default function Project() {
   return (
     <>
       {/* <div className=""> */}
-      <div className=" min-h-screen min-w-screen gap-2 rounded-tl-2xl border border-neutral-200 bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200">
+      <div>
         <div className="relative m-4">
           <div className="inline-block">
             <h1 className="text-2xl font-bold">Project Section</h1>
@@ -22,7 +22,7 @@ export default function Project() {
           <div className="inline-block absolute right-4 top-0">
             <button
               onClick={() => setOpen(true)}
-              className="border-2 rounded px-4 py-2"
+              className="border-2 rounded px-4 py-2 cursor-pointer hover:bg-black hover:text-white transition"
             >
               +Add Project{" "}
             </button>
