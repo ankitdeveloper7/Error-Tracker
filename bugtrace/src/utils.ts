@@ -5,8 +5,9 @@ export function formatError(error: string): formatedError {
     errortype: "TypeError",
     message: error,
     filename: "app.js",
-    linenumber: 10,
-    statuscode: 500,
-    stacktrace: "stacktrace details",
+    lineno: 10,
+    colno: 500,
+    // stacktrace: "stacktrace details",
+    error: "asjdflkasjdfl",
   };
 }

@@ -5,10 +5,10 @@ export type InitConfig = {
 };
 
 export type formatedError = {
-  errortype: string;
+  errortype?: string;
   message: string;
-  filename: string;
-  linenumber: number;
-  statuscode: number;
-  stacktrace: string;
+  filename?: string;
+  lineno?: number;
+  colno?: number;
+  error?: string;
 };
