@@ -71,8 +71,6 @@ const bugtrace = {
           lineno: formatedError.lineno,
           colno: formatedError.colno,
           error: formatedError.error
-            ? formatError(formatedError.error.toString())
-            : null,
         },
       }).then((res) => {
         console.log("Error logged successfully");
