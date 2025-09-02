@@ -1,13 +1,14 @@
 "use client";
-
+import { X } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
   DialogBackdrop,
   DialogPanel,
-  DialogTitle,
+  // DialogTitle,
 } from "@headlessui/react";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+// import addProject from "@/app/actions/Project";
+// import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 type AddProjectModalProps = {
   open: boolean;
@@ -19,7 +20,16 @@ export default function AddProjectModal({
   onClose,
 }: AddProjectModalProps) {
   //   const [open, setOpen] = useState(true);
+  async function addProject(formData: FormData) {
+    alert("this function is being called");
+    const projectname = formData.get("projectname");
+    // const tech = formdata.get("tech");
+    // const env = formdata.get("env");
+    // const team = formdata.get("team");
 
+    console.log(projectname);
+    onClose();
+  }
   return (
     <div>
       <Dialog open={open} onClose={onClose} className="relative z-10">
@@ -34,26 +44,73 @@ export default function AddProjectModal({
               transition
               className="relative transform overflow-hidden rounded-lg bg-gray-800 text-left shadow-xl outline -outline-offset-1 outline-white/10 transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95"
             >
-              <div className="bg-black text-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <p>this is add project form </p>
-                <button onClick={onClose}>close</button>
-              </div>
-              {/* <div className="bg-gray-700/25 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              <div className="bg-[#202026] text-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 relative">
+                <h3 className="">Add Your Project</h3>
+                <form action={addProject}>
+                  <div className="my-4">
+                    <label>
+                      Project Name <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-2 rounded border-2 mt-2"
+                      name="projectname"
+                      placeholder="E-commerce Platform"
+                    />
+                  </div>
+                  <div className="my-4">
+                    <label>
+                      Language <span className="text-red-600">*</span>
+                    </label>
+                    <div>
+                      <select
+                        name="tech"
+                        className="w-full px-4 py-2 rounded border-2 bg-[#202026] mt-2"
+                      >
+                        <option value="Nodejs">Nodejs</option>
+                        <option value="Nextjs">Nextjs</option>
+                        <option value="Reactjs">Reactjs</option>
+                        {/* <option value="Java">Java</option>
+                        <option value="python">Python</option> */}
+                      </select>
+                    </div>
+                  </div>
+                  <div className="my-4">
+                    <label>Environment</label>
+                    <div>
+                      <select
+                        name="env"
+                        className="w-full px-4 py-2 rounded border-2 bg-[#202026] mt-2"
+                      >
+                        <option value="Production">Production</option>
+                        <option value="Staging">Staging</option>
+                        <option value="Development">Development</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="my-4">
+                    <label>Organization / Team</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-2 rounded border-2 mt-2"
+                      name="team"
+                      placeholder="Flipkart-Frontend"
+                    />
+                  </div>
+                </form>
                 <button
-                  type="button"
-                  className="inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400 sm:ml-3 sm:w-auto"
+                  className="w-full my-4 py-2 text-black border-2 bg-white rounded cursor-pointer hover:text-black hover:bg-[#00ffb2] hover:border-[#00ffb2]"
+                  type="submit"
                 >
-                  Deactivate
+                  Create
                 </button>
                 <button
-                  type="button"
-                  data-autofocus
                   onClick={onClose}
-                  className="mt-3 inline-flex w-full justify-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 sm:mt-0 sm:w-auto"
+                  className="absolute right-1 top-1 cursor-pointer text-white"
                 >
-                  Cancel
+                  <X />
                 </button>
-              </div> */}
+              </div>
             </DialogPanel>
           </div>
         </div>
