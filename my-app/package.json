@@ -11,7 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",
-    "@prisma/client": "^6.13.0",
+    "@prisma/client": "^6.15.0",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "@tabler/icons-react": "^3.34.1",
     "class-variance-authority": "^0.7.1",

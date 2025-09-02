@@ -36,9 +36,12 @@ model Error{
   id         Int @unique @default(autoincrement())
   type       String
   message    String
-  filename   String
-  linenum    Int
-  status     Status
+  source   String
+  lineno    Int
+  colno     Int
+  status     Status @default(Bug)
+  error String
+  errorCount Int? @default(1)
   createdAt  DateTime @default(now())
   projectId  Int
   project    Project @relation(fields: [projectId], references: [id])
