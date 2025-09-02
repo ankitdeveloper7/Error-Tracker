@@ -1,6 +1,8 @@
 import axios from "axios";
 import { InitConfig, formatedError } from "./types";
 import { formatError } from "./utils";
+import dotenv from "dotenv";
+dotenv.config();
 
 const bugtrace = {
   config: { dsnUrl: "", projectId: "", apikey: "" },
@@ -8,7 +10,7 @@ const bugtrace = {
   init({ dsnUrl, projectId, apikey }: InitConfig) {
     this.projectId = projectId;
     this.apikey = apikey;
-    this.dsnUrl = dsnUrl;
+    this.dsnUrl = process.env.dsnurl;
 
     //global error handler
     ((window.onerror = async function (message, source, lineno, colno, error) {
@@ -16,8 +18,9 @@ const bugtrace = {
         // send to server
         await axios({
           method: "post",
-          url: `${this.dsnUrl}/${this.projectId}/${this.apikey}`,
+          url: dsnUrl,
           data: {
+            projectId: projectId,
             message: message,
             source: source,
             lineno: lineno,
@@ -39,6 +42,7 @@ const bugtrace = {
             method: "post",
             url: `${this.dsnUrl}/${this.projectId}/${this.apikey}`,
             data: {
+              projectId: this.projectId,
               message: event.message,
               source: event.filename,
               lineno: event.lineno,
@@ -64,13 +68,14 @@ const bugtrace = {
     try {
       await axios({
         method: "post",
-        url: `${this.dsnUrl}/${this.projectId}/${this.apikey}`,
+        url: this.dsnurl,
         data: {
+          projectId: this.projectId,
           message: formatedError.message,
           source: formatedError.filename,
           lineno: formatedError.lineno,
           colno: formatedError.colno,
-          error: formatedError.error
+          error: formatedError.error,
         },
       }).then((res) => {
         console.log("Error logged successfully");
