@@ -2,31 +2,28 @@ import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-type formatedError = {
-  type: string;
-  message: string;
-  source: string;
-  lineno: string;
-  colno: string;
-  status: "Bug";
-  error: string;
-};
+// type formatedError = {
+//   type: string;
+//   message: string;
+//   source: string;
+//   lineno: number;
+//   colno: number;
+//   status: "Bug";
+//   error: string;
+// };
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     await prisma.error.create({
-      where: {
-        projectId: "",
-        apiKey: "",
-      },
       data: {
-        type: body.errortype,
+        type: "",
         message: body.message,
         source: body.source,
         lineno: body.lineno,
         colno: body.colno,
         status: "Bug",
         error: body.error,
+        projectId:body.projectId
       },
     });
     return NextResponse.json(

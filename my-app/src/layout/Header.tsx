@@ -58,7 +58,7 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
-              href="#"
+              href="/auth/login"
               className="text-sm/6  text-white hover:text-[#00ffb2] font-semibold"
             >
               Start Free <span aria-hidden="true">&rarr;</span>
@@ -107,7 +107,7 @@ export default function Header() {
                 </div>
                 <div className="py-6">
                   <a
-                    href="#"
+                    href="/dashboard"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-black bg-[#00ffb2]"
                   >
                     Start Free
@@ -135,7 +135,7 @@ export default function Header() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="/dashboard"
                 className="rounded-md bg-[#00ffb2] font-semibold px-3.5 py-2.5 text-sm  text-black shadow-xs  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Start Free
