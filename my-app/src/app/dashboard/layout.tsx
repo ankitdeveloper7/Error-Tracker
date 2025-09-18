@@ -8,6 +8,8 @@ import { SidebarBody, SidebarLink } from "@/components/ui/sidebar";
 import { links } from "@/config/sidebarMenu";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import t1 from "../../../public/Images/logo/3.png";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,30 +29,42 @@ export default function DashboardLayout({
   const [open, setOpen] = useState(false);
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-black text-red-500`}
+      >
         <div
           className={cn(
-            "mx-auto flex w-full  flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 bg-gray-100 md:flex-row dark:border-neutral-700 dark:bg-neutral-800",
+            "mx-auto flex w-full  flex-1 flex-col overflow-hidden   text-gray-500  md:flex-row ",
             "min-h-screen" // for your use case, use `h-screen` instead of `h-[60vh]`
           )}
         >
           <Sidebar open={open} setOpen={setOpen}>
             <SidebarBody className="justify-between gap-10">
-              <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
+              <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto relative">
+                <div>
+                  <Image
+                    src={t1}
+                    width={200}
+                    height={20}
+                    alt="this is terminal image"
+                    className=""
+                  />
+                </div>
+                {/* <hr /> */}
                 {/* {open ? <Logo /> : <LogoIcon />} */}
                 <div className="mt-8 flex flex-col gap-2">
                   {links.map((link, idx) => (
                     <SidebarLink key={idx} link={link} />
                   ))}
                 </div>
+                {/* <div className="fixed bottom-2 left-2">LogOut</div> */}
               </div>
-              <div></div>
             </SidebarBody>
           </Sidebar>
           {/* <Dashboard /> */}
           <div className="flex flex-1">
-            <div className="flex h-full w-full flex-1 flex-col gap-2 rounded-tl-2xl border border-neutral-200 bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-neutral-900">
-              <main className="text-black">{children}</main>
+            <div className="flex h-full w-full flex-1 flex-col gap-2  border border-[#202026]  p-2 md:p-10">
+              <main className="text-[#d5d5d5]">{children}</main>
             </div>
           </div>
         </div>

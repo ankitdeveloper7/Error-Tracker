@@ -1,7 +1,7 @@
 export default function page() {
   return (
     <>
-      <div className="">
+      <div>
         <p>this is dashboard section</p>
       </div>
     </>
