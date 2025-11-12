@@ -1,15 +1,14 @@
 import axios from "axios";
-import { Errors } from "./types";
-require("dotenv").config();
+import { config } from "./utils";
 
-export async function sendError({ error, projectId }: Errors) {
+export async function sendError(error: any) {
   try {
     await axios({
       method: "POST",
       url: process.env.DSNURL,
       data: {
         error,
-        projectId,
+        projectId: config.projectId,
       },
     });
   } catch (error) {

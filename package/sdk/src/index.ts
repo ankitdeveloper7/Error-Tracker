@@ -1,8 +1,13 @@
-import { config } from "./utils";
-import { SDKconfig } from "./types";
+import { BrowserInit } from "./browser";
+import { SDKconfig } from "./core/types";
+import { NodeInit } from "./node";
 
-function init({ projectId, user_id, Environment }: SDKconfig) {
-  ((config.projectId = projectId),
-    (config.user_id = user_id),
-    (config.Environment = Environment));
+export function init({ projectId, user_id, Environment }: SDKconfig) {
+  if (typeof window !== undefined) {
+    BrowserInit({ projectId, user_id, Environment });
+  } else if (typeof process !== undefined) {
+    NodeInit({ projectId, user_id, Environment });
+  } else {
+    console.log("some Invalid Error has occured");
+  }
 }
