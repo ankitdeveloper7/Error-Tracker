@@ -55,3 +55,4 @@ override.tf.json
 
 .terraformrc
 terraform.rc
+node_modules/
