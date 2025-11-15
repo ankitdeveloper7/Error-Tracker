@@ -42,10 +42,10 @@ jobs:
     - name: Build and Push Docker Image 
       uses: docker/build-push-action@v6
       with:
-        context: ./my-app
-        file: ./my-app/Dockerfile
+        context: ./web
+        file: ./web/Dockerfile
         push: true
-        tags: ${{secrets.DOCKER_USERNAME}}/error-tracker-devops:${{github.run_id}}
+        tags: ${{secrets.DOCKER_USERNAME}}/error-tracker-app:${{github.run_id}}
 
   Security-Scan:
     needs: Build-Docker-Image
@@ -58,7 +58,7 @@ jobs:
       uses: aquasecurity/trivy-action@0.3.0
       with:
         scan-type: 'image'
-        image-ref: '${{secrets.DOCKER_USERNAME}}/error-tracker-devops:${{github.run_id}}'
+        image-ref: '${{secrets.DOCKER_USERNAME}}/error-tracker-app:${{github.run_id}}'
         format: 'table'
         severity: 'CRITICAL,HIGH'
         ignore-unfixed: true
@@ -78,8 +78,8 @@ jobs:
 
   - name: Commit and Push Changes
     run: |
-      git config --global user.email "kumarabhijeetips@gmail.com"
-      git config --global user.name "Abhijeet Kumar"
+      git config --global user.email "kumar27ankitsingh@gmail.com"
+      git config --global user.name "Ankit kumar"
       git add helm/error-tracker-chart/values.yaml
       git commit -m "update tag in helm chart"
       git push
