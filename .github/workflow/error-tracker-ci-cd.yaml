@@ -45,7 +45,7 @@ jobs:
         context: ./web
         file: ./web/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/error-tracker-app:${{ github.run_id }}
+        tags: ${{secrets.DOCKER_USERNAME}}/error-tracker-app:${{github.run_id}}
 
   Security-Scan:
     needs: Build-Docker-Image
@@ -59,7 +59,7 @@ jobs:
       uses: aquasecurity/trivy-action@0.3.0
       with:
         scan-type: 'image'
-        image-ref: '${{ secrets.DOCKER_USERNAME }}/error-tracker-app:${{ github.run_id }}'
+        image-ref: '${{secrets.DOCKER_USERNAME}}/error-tracker-app:${{github.run_id}}'
         format: 'table'
         severity: 'CRITICAL,HIGH'
         ignore-unfixed: true
@@ -75,7 +75,7 @@ jobs:
 
   - name: Update tag in helm chart
     run: |
-      sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/error-tracker-chart/values.yaml
+      sed -i 's/tag: .*/tag: "${{github.run_id}}"/' helm/error-tracker-chart/values.yaml
 
   - name: Commit and Push Changes
     run: |
